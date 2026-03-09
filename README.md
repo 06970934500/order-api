@@ -223,6 +223,6 @@ http://localhost:3000
 
 ---
 
-# Autor
+# Autor de desenvolvimento
 
 Laécio Almeida de Souza.
