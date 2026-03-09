@@ -1,13 +1,23 @@
 const mongoose = require("mongoose");
+const { MongoMemoryServer } = require("mongodb-memory-server");
+
+let mongod;
 
 const connectDB = async () => {
   try {
-    await mongoose.connect("mongodb://localhost:27017/ordersDB");
 
-    console.log("MongoDB conectado");
+    mongod = await MongoMemoryServer.create();
+
+    const uri = mongod.getUri();
+
+    await mongoose.connect(uri);
+
+    console.log("MongoDB em memória conectado");
+
   } catch (error) {
+
     console.error("Erro ao conectar DB", error);
-    process.exit(1);
+
   }
 };
 

@@ -1,29 +1,15 @@
+const Order = require("../models/Order");
 const logger = require("../utils/logger");
 
-function createOrder(orderData) {
+exports.createOrder = async (data) => {
 
   logger.info("Criando pedido");
-
-  // lógica do pedido
-  const app = require("./src/app");
-
-const PORT = 3000;
-
-app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
-});
-}
-
-//lógica do negócio
-const Order = require("../models/Order");
-
-exports.createOrder = async (data) => {
 
   const mappedOrder = {
     orderId: data.numeroPedido,
     value: data.valorTotal,
     creationDate: data.dataCriacao,
-    items: data.items.map(item => ({
+    items: (data.items || []).map(item => ({
       productId: Number(item.idItem),
       quantity: item.quantidadeItem,
       price: item.valorItem
