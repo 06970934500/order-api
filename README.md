@@ -107,17 +107,29 @@ A aplicação segue **arquitetura em camadas**, separando responsabilidades para
 Estrutura utilizada:
 
 ```
-src
-  pasta = config = aquivo = database.js
-  pasta = controllers = aquivo = orderControllers.js
-  pasta = middlewarw = aquivo = errorMiddleware.js
-  pasta = models = aquivo = Order.js
-  pasta = routes = aquivo = orderRoutes.js
-  pasta = services = aquivo = orderServices.js
-  pasta = utils = aquivo = logger.js
-  pasta = validators = aquivo = orderValidator.js
-  aquivo = app.js
-  arquivo = sever.js
+Estrutura principal do projeto:
+
+src/
+  config/
+    database.js
+  controllers/
+    orderControllers.js
+  docs/
+    swegger.js
+  middleware/
+    errorMiddleware.js
+  models/
+    Order.js
+  routes/
+    orderRoutes.js
+  services/
+    orderServices.js
+  utils/
+    logger.js
+  validators/
+    orderValidator.js
+  app.js
+  server.js
 ```
 
 ---

@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const connectDB = require("./config/database");
 const orderRoutes = require("./routes/orderRoutes");
-const errorMiddleware = require("./middlewares/errorMiddleware");
+const errorMiddleware = require("./middlewarw/errorMiddlewarw");
 
 const swaggerUi = require("swagger-ui-express");
 const swaggerSpec = require("./docs/swagger");
