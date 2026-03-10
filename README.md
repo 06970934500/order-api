@@ -189,7 +189,11 @@ Servidor rodará em:
 ```
 http://localhost:3000
 ```
+### Após iniciar o projeto, acesse:
 
+http://localhost:3000/api-docs
+
+A documentação interativa da API foi implementada utilizando Swagger.
 ---
 
 # Exemplo de resposta da API

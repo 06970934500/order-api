@@ -4,6 +4,9 @@ const connectDB = require("./config/database");
 const orderRoutes = require("./routes/orderRoutes");
 const errorMiddleware = require("./middlewares/errorMiddleware");
 
+const swaggerUi = require("swagger-ui-express");
+const swaggerSpec = require("./docs/swagger");
+
 const app = express();
 
 connectDB();
@@ -14,5 +17,7 @@ app.use(express.json());
 app.use("/order", orderRoutes);
 
 app.use(errorMiddleware);
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 module.exports = app;
