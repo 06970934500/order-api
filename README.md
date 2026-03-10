@@ -14,6 +14,7 @@ API REST para gerenciamento de pedidos construída com Node.js, Express e MongoD
 - Winston (logger)
 - Dotenv
 - Cors
+- Swagger (documentação interativa)
 
 ---
 
@@ -117,7 +118,7 @@ src/
   docs/
     swegger.js
   middleware/
-    errorMiddleware.js
+    errorMiddlewarw.js
   models/
     Order.js
   routes/
@@ -129,7 +130,7 @@ src/
   validators/
     orderValidator.js
   app.js
-  server.js
+  sever.js
 ```
 
 ---
@@ -169,13 +170,18 @@ git clone <url-do-repositorio>
 
 ### 2 Instalar dependências
 
+# Scripts disponíveis
+
+npm start      # inicia o servidor
+npm run dev    # inicia em modo desenvolvimento
+
 ```
 npm install
 ```
 
 ### 3 Configurar variáveis de ambiente
 
-Criar um arquivo `.env` na raiz do projeto:
+Criar um arquivo `.env` baseado no `.env.example`:
 
 ```
 PORT=3000
@@ -192,7 +198,7 @@ npm install mongodb-memory-server
 ### 5 Executar o servidor
 
 ```
-npm install
+
 npm start
 ```
 
@@ -203,9 +209,14 @@ http://localhost:3000
 ```
 ### Após iniciar o projeto, acesse:
 
+## Documentação da API
+
+A documentação interativa está disponível em:
+
 http://localhost:3000/api-docs
 
 A documentação interativa da API foi implementada utilizando Swagger.
+
 ---
 
 # Exemplo de resposta da API
@@ -224,6 +235,13 @@ A documentação interativa da API foi implementada utilizando Swagger.
   ]
 }
 ```
+# Códigos de resposta
+
+200 - Sucesso
+201 - Pedido criado com sucesso
+400 - Dados inválidos
+404 - Pedido não encontrado
+500 - Erro interno do servidor
 
 ---
 
